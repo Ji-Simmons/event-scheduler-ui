@@ -33,8 +33,8 @@ export default class Calendar extends Component {
   }
 
   getEvent = () => {
-    //fetch('https://event-scheduler-api.herokuapp.com/api/events')
-    fetch("http://localhost:5556/api/events")
+    fetch('https://event-scheduler-api.herokuapp.com/api/events')
+    // fetch("http://localhost:5556/api/events")
       .then((response) => {
         return response.json();
       })
@@ -114,8 +114,8 @@ export default class Calendar extends Component {
     events.push(appointment);
    
         // and some other stuff
-		let route = `http://localhost:5556/api/events`;
-		//let route = `https://helio-calendar-api.herokuapp.com/api/events`;
+		// let route = `http://localhost:5556/api/events`;
+		let route = `https://event-scheduler-api.herokuapp.com/api/events`;
         let options = {
             method: 'POST',
             headers: {
@@ -150,8 +150,8 @@ export default class Calendar extends Component {
     event.preventDefault();
 		console.log('first state: ', this.state);
 		// and some other stuff
-		let route = 'http://localhost:5556/api/events';
-		//let route = 'https://helio-calendar-api.herokuapp.com/api/events';
+		// let route = 'http://localhost:5556/api/events';
+		let route = 'https://event-scheduler-api.herokuapp.com/api/events';
 		// we need the _id in state to make stuff work but we don't actually want to submit it
 		let submitData = { ...this.state };
 		delete submitData._id;
@@ -194,8 +194,8 @@ export default class Calendar extends Component {
 		let fetchOptions = {
 			method: 'DELETE'
 		};
-		fetch(`http://localhost:5556/api/events/${id}`, fetchOptions)
-		//fetch(`https://helio-calendar-api.herokuapp.com/api/lists/${id}`, fetchOptions)
+		// fetch(`http://localhost:5556/api/events/${id}`, fetchOptions)
+		fetch(`https://event-scheduler-api.herokuapp.com/api/lists/${id}`, fetchOptions)
 			.then((response) => {
 				return response.json();
 			})
