@@ -34,7 +34,7 @@ export default class Calendar extends Component {
 
   getEvent = () => {
     //fetch('https://helio-calendar-api.herokuapp.com/api/events')
-    fetch("http://localhost:5656/api/events")
+    fetch("http://localhost:5556/api/events")
       .then((response) => {
         return response.json();
       })
@@ -112,9 +112,9 @@ export default class Calendar extends Component {
     let appointment = { title, category, start, end, desc };
     let events = this.state.events.slice();
     events.push(appointment);
-    event.preventDefault();
+   
         // and some other stuff
-		let route = `http://localhost:5656/api/tasks`;
+		let route = `http://localhost:5556/api/events`;
 		//let route = `https://helio-calendar-api.herokuapp.com/api/events`;
         let options = {
             method: 'POST',
@@ -128,7 +128,7 @@ export default class Calendar extends Component {
         .then((data) =>
         {
             console.log('should have added a new task: ', data);
-            this.context.getTasks();
+            this.context.getEvents();
         })
         .catch((err) =>
         {
@@ -150,7 +150,7 @@ export default class Calendar extends Component {
     event.preventDefault();
 		console.log('first state: ', this.state);
 		// and some other stuff
-		let route = 'http://localhost:5656/api/events';
+		let route = 'http://localhost:5556/api/events';
 		//let route = 'https://helio-calendar-api.herokuapp.com/api/events';
 		// we need the _id in state to make stuff work but we don't actually want to submit it
 		let submitData = { ...this.state };
@@ -194,7 +194,7 @@ export default class Calendar extends Component {
 		let fetchOptions = {
 			method: 'DELETE'
 		};
-		fetch(`http://localhost:5656/api/events/${id}`, fetchOptions)
+		fetch(`http://localhost:5556/api/events/${id}`, fetchOptions)
 		//fetch(`https://helio-calendar-api.herokuapp.com/api/lists/${id}`, fetchOptions)
 			.then((response) => {
 				return response.json();
@@ -279,7 +279,7 @@ export default class Calendar extends Component {
           <TextField
             floatingLabelText="Title"
             onChange={e => {
-              this.setc(e.target.value);
+              this.setTitle(e.target.value);
             }}
           />
           <br />
