@@ -2,7 +2,7 @@
   "name": "calendar-schedule",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://taylorsam209.github.io/calendar-scheduler/",
+  "homepage": "https://event-scheduler-ui.netlify.app/",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -29,4 +29,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   }
+ 
 }
+
