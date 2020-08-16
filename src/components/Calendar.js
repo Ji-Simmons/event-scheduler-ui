@@ -33,7 +33,7 @@ export default class Calendar extends Component {
   }
 
   getEvent = () => {
-    //fetch('https://helio-calendar-api.herokuapp.com/api/events')
+    //fetch('https://event-scheduler-api.herokuapp.com/api/events')
     fetch("http://localhost:5556/api/events")
       .then((response) => {
         return response.json();
